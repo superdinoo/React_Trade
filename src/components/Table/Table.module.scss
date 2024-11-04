@@ -1,0 +1,60 @@
+@import 'App.variables.scss';
+
+.container {
+  overflow-x:auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  text-align: center;
+
+  .colHead {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    color: $blue1;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 10px;
+    position: relative;
+  }
+
+  .rowHead {
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+    min-width: 350px;
+  }
+
+  td {
+    padding: 5px 10px;
+    min-width: 160px;
+  }
+
+  tbody tr:nth-child(odd) {
+    background: #ffffff;
+  }
+
+  tbody tr:nth-child(even) {
+    background: $gray;
+  }
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  background: #e6ecf3;
+  position: absolute;
+  top: 16px;
+  right: 8px;
+
+  &.online {
+    background: #9ec94a;
+  }
+}

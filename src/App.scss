@@ -1,0 +1,22 @@
+@import 'App.variables.scss';
+
+.btn {
+  color: white;
+  padding: 14px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.btnGreen {
+  background-color: $green;
+}
+
+.btnBlue {
+  background-color:$blue2;
+}
+
+.btnRed {
+  background-color: $red;
+}
