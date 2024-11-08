@@ -1,4 +1,4 @@
-@import 'App.variables.scss';
+@import 'App.all.scss';
 
 .btn {
   color: white;
@@ -14,7 +14,7 @@
 }
 
 .btnBlue {
-  background-color:$blue2;
+  background-color: $blue2;
 }
 
 .btnRed {

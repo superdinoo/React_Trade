@@ -1,14 +1,15 @@
-import { useAppDispatch, useAppSelector } from 'hooks/hooks';
-import AuctionPage from 'pages/AuctionPage/AuctionPage';
-import UserPage from 'pages/UserPage/UserPage';
 import React, { useEffect } from 'react';
+import HomePage from 'pages/HomePage/HomePage';
+import UserPage from 'pages/UserPage/UserPage';
 import { Route, Routes } from 'react-router-dom';
-import { setStartTime, updateTime, updateTurn } from 'redux/reducers/auctionSlice';
+import { setStartTime, updateTime, updateTurn } from 'redux/reducers/updateSlice';
 import './App.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSelectInfo } from 'selectors/selectAll';
 
-function App() {
-  const { timeLeft, isComplete } = useAppSelector((state) => state.auction);
-  const dispatch = useAppDispatch();
+const App = () => {
+  const { timeLeft, isComplete } = useSelector(getSelectInfo);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -19,7 +20,7 @@ function App() {
       interval = setInterval(() => {
         dispatch(updateTime());
 
-        if (timeLeft === 0) {
+        if (timeLeft.timeLeft === 0) {
           dispatch(setStartTime());
           dispatch(updateTurn());
         }
@@ -29,16 +30,16 @@ function App() {
     return () => {
       clearInterval(interval);
     };
-  }, [timeLeft, isComplete]);
+  }, [timeLeft, isComplete, dispatch]);
 
   return (
     <>
       <Routes>
-        <Route path="/" element={<AuctionPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/users" element={<UserPage />} />
       </Routes>
     </>
   );
-}
+};
 
 export default App;

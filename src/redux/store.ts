@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import auctionReducer from './reducers/auctionSlice';
+import updateReducer from './reducers/updateSlice';
 
 export const store = configureStore({
   reducer: {
-    auction: auctionReducer,
+    updateDate: updateReducer,
   },
 });
 

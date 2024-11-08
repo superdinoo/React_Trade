@@ -1,0 +1,41 @@
+@import 'App.all.scss';
+
+.containerUser {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.titleUser {
+  font-size: $title-font;
+  line-height: calc($title-font * 1.5);
+  color: $red;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  color: $red;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.users {
+  max-width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 3px 4px rgb(0 0 0 / 10%);
+  border-radius: 5px;
+  background-color: $light-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}

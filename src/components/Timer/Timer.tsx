@@ -1,17 +1,18 @@
-import { getPadTime } from 'helpers/getPadTime';
-import { useAppSelector } from 'hooks/hooks';
 import React from 'react';
-import style from './Timer.module.scss';
+import { getTime } from 'helpers/getTime';
+import './Timer.scss';
+import { useSelector } from 'react-redux';
+import { selectTimeLeft } from '../../selectors/selectAll';
 
-export const Timer = () => {
-  const { timeLeft } = useAppSelector((state) => state.auction);
+const Timer = () => {
+  const { timeLeft } = useSelector(selectTimeLeft);
 
-  const hours = getPadTime(Math.floor(timeLeft / 3600));
-  const minutes = getPadTime(Math.floor((timeLeft / 60) % 60));
-  const seconds = getPadTime(Math.floor(timeLeft % 60));
+  const hours = getTime(Math.floor(timeLeft / 3600));
+  const minutes = getTime(Math.floor((timeLeft / 60) % 60));
+  const seconds = getTime(Math.floor(timeLeft % 60));
 
   return (
-    <div className={style.timer}>
+    <div className="timerContainer">
       <span>{hours}</span>
       <span>:</span>
       <span>{minutes}</span>

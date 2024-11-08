@@ -1,9 +1,13 @@
-export interface IUser {
-  id: string;
-  activities: string;
-  productionTime: string;
-  warranties: string;
-  paymentTerms: string;
-  cost: string;
-  isOnline: boolean;
-}
+import { IUser } from './interface';
+
+export type UpdateState = {
+  users: IUser[];
+  startTime: number;
+  timeLeft: number;
+  turn: number;
+  isComplete: boolean;
+};
+
+export type TableProps = {
+  data: IUser[];
+};

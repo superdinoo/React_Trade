@@ -1,14 +1,13 @@
 import React from 'react';
-import style from './UserPage.module.scss';
+import './UserPage.scss';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from 'hooks/hooks';
-import { updateStatus } from 'redux/reducers/auctionSlice';
+import { updateStatus } from 'redux/reducers/updateSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUsers } from 'selectors/selectAll';
 
-export const UserPage = () => {
-  const { users } = useAppSelector((state) => state.auction);
-
-  const dispatch = useAppDispatch();
-
+const UserPage = () => {
+  const users = useSelector(selectUsers);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -20,10 +19,10 @@ export const UserPage = () => {
   };
 
   return (
-    <div className={style.container}>
-      <h2 className={style.title}>Текущие торги</h2>
-      <div className={style.users}>
-        <h3 className={style.subtitle}>Участники торгов</h3>
+    <div className="containerUser">
+      <h2 className="titleUser">Текущие торги</h2>
+      <div className="users">
+        <h3 className="subtitle">Участники торгов</h3>
         <ul>
           {users.map((item, index) => (
             <li key={item.id}>
@@ -33,7 +32,7 @@ export const UserPage = () => {
                   name="user"
                   type="checkbox"
                   checked={item.isOnline}
-                  onChange={() => handleChange(item.id)}
+                  onChange={() => handleChange(item.id ?? '')}
                 />
               </label>
             </li>
