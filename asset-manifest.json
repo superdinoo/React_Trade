@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/React_Trade/static/css/main.960b1919.css",
+    "main.js": "/React_Trade/static/js/main.5555c8c6.js",
+    "static/media/glass.svg": "/React_Trade/static/media/glass.2c00a23b71c08d1edaa7.svg",
+    "index.html": "/React_Trade/index.html",
+    "main.960b1919.css.map": "/React_Trade/static/css/main.960b1919.css.map",
+    "main.5555c8c6.js.map": "/React_Trade/static/js/main.5555c8c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.960b1919.css",
+    "static/js/main.5555c8c6.js"
+  ]
+}
